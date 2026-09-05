@@ -130,7 +130,7 @@ def handle_data(m):
 
     if state.get('step') == 'broadcast':
         admin_states.pop(uid, None)
-        broadcast_text = f"Официальное оповещение от старосты:\n\n{m.text}"
+        broadcast_text = f"Общая информация:\n\n{m.text}"
         with get_db() as conn:
             users = conn.execute("SELECT user_id FROM group_users").fetchall()
         count = 0
